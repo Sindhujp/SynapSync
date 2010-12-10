@@ -1,0 +1,52 @@
+{% extends "_base.html" %}
+{% block title %}
+		SynapSync - Content Publishing Platform for Online Social Networks
+{% endblock %}
+{% block bodycontent %} 
+	<div id="content">
+		<p>
+			<h2>Welcome to SynapSync!</h2>
+		</p>
+		<p>
+			Please <a href="register.html">sign up</a> for an account and be patient while we figure out the service and continue to add funtionality. :)
+		</p>
+		<p>Thanks,</p>
+		<p>SynapSync Team</p>
+		 
+	</div>
+	<div class="rightcolumn">
+		{% if not user %} 
+			<form method="post" accept-charset="utf-8">
+				<p>
+					<h3>Login</h3>
+				</p>
+				<p>
+					<table>
+						<tr>
+							<td>
+								E-mail:
+							</td>
+							<td>
+								<input type="text" name="txtEmail" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Password:
+							</td>
+							<td>
+								<input name="txtPassword" type="password" />
+							</td>
+						</tr>
+					</table>
+				</p>
+				<p>
+					<input type="submit" value="Login"/>
+					<input type="reset" value="Reset"/>
+					<a href="../retrieve.html">forgot pasword?</a> 
+				</p>
+			</form>
+		{% endif %}
+	</div>
+
+{% endblock %}

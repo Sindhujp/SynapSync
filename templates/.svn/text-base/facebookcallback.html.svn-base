@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% block title %}
+		Facebook Authentication Complete
+{% endblock %}
+{% block bodycontent %}	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<body>
+	<div id="permission">
+	Thank you for verifying your credentials.  Please provide extended permissions to our application by clicking <fb:prompt-permission perms='offline_access,publish_stream,read_stream'>here</fb:prompt-permission>
+	and click Finish to complete the process.
+	</div>
+	<script type="text/javascript" src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"></script>
+	<script type="text/javascript" src="../static/facebook.js"></script>
+	
+	<a href="http://crm.synapsync.com/fbauthorized/user?{{currentUser}}&auth?{{token}}&fname?{{firstn}}&lname?{{lastn}}">Finish</a>
+	<script type="text/javascript">
+	FB.XFBML.Host.parseDomTree();
+	</script>
+</body>
+</html>
+{% endblock %}

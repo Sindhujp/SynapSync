@@ -1,0 +1,94 @@
+{% extends "_base.html" %}
+	
+	{% block title %}
+		SynapSync - Control Panel
+	{% endblock %}
+
+	{% block bodycontent %}
+		<div id="content">
+			<p>
+				<h2>Control Panel:</h2>
+			</p>
+			<p>
+				<form method="post" name="myform" enctype="multipart/form-data">
+					<p>
+						Attachment: <input type="file" name="file" accept="image" size="1"> <i>images only (jpeg, png, etc.)</i>
+					</p>
+					<p>
+						<div id="Title">
+						Title: <input id="title" name="txtTitle" type="text" style="width: 100%;" />
+						</div>
+					</p>
+					<p>
+						Content:<br>
+						<textarea id="message" name="txtContent" style="width: 100%; height: 160px"></textarea>
+					</p>
+					<input name="btnSubmit" type="submit" value="Post" onClick="publish_facebook_content();" />
+					<input name="btnSubmit" type="submit" value="Save" />
+					{% if savedPosts %}
+						<p>
+							<h3>Saved Updates:</h3>
+						</p>
+						<p>
+							{{savedPosts}}
+						</p>
+					{% endif %}
+				</form>
+			</p>
+		
+		</div>
+		
+		<div class="rightcolumn">
+			<p>
+				{% if socialAccounts %}
+					<h3>Twitter Accounts</h3>
+					{% for r in socialAccounts %}
+						<ul>
+							<li><a href="http://www.twitter.com/{{r}}">{{r}}</a></li>
+						</ul>
+					{% endfor %}
+				{% endif %}
+			</p>
+			<p>
+				{% if facebookAccounts %}
+					<h3>Facebook Accounts</h3>
+					{% for f in facebookAccounts %}
+						<ul>
+							<li><a href="http://www.facebook.com/profile.php?ref=profile&id={{f.dbUid}}">{{f.dbUserName}}</a></li>
+						</ul>
+					{% endfor %}
+				{% endif %}
+			</p>
+			<p>
+				{% if mentions %}
+					<h3>Latest Comments:</h3>			
+					{% for mention in mentions %}
+						{{mention.dbCreatedTime}}
+						<br>
+						{{mention.dbMessage}}
+						<br>
+						{{mention.dbLink}}
+						<br>
+						<a href="/twitter_reply?id={{mention.dbPostID}}&receiver_name={{mention.dbReceiverName}}&name={{mention.dbName}}"> Reply</a>
+						<br>
+						<br>
+					{% endfor %}
+				{% endif %}
+				{% if comments %}		
+					{% for comment in comments %}
+						{{comment.dbMessage}}
+						<br>
+						{{comment.dbLink}}
+						<br>
+						{{comment.dbReplyTo}}
+						<br>
+						<a href="/facebook_reply?id={{comment.dbPostID}}&user_id={{comment.dbUserID}}"> Reply</a>
+						<br>
+						<br>
+					{% endfor %}
+				{% endif %}
+			</p>
+		</div>
+		<script type="text/javascript" src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"></script>
+		<script type="text/javascript" src="../static/facebook_publish.js"></script>
+{% endblock %}

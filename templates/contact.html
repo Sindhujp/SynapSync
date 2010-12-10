@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+	{% block title %}
+		Contact {{company}}
+	{% endblock %}
+	{% block bodycontent %}
+		<div id="content"> 
+			<form method="post" accept-charset="utf-8">
+				<table>
+					<tr>
+						<td>To: <input name="txtRecepient" type="text" readonly="{{company}}" value="{{company}}"/></td>
+					</tr>
+					<tr>
+						<td>Subject: <input name="txtSubject" type="text" /></td>
+					</tr>
+					<tr>
+						<td><input name="txtContent" type="text" style="width: 100%; height: 160px" /></td>
+					</tr>
+				</table>
+				<input name="btnSend" type="submit" value="Send" />
+			</form>
+		</div>
+	{% endblock %}

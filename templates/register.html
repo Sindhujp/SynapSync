@@ -1,0 +1,42 @@
+﻿{% extends "_base.html" %}
+	{% block title %}
+		SynapSync - Registration
+	{% endblock %}
+	{% block bodycontent %}
+		<div id="content">
+			<h2>Account Registration:</h2>
+			<form method="post" accept-charset="utf-8">
+				<table>
+					<tr>
+						<td><b>INVITE CODE:</b></td>
+						<td><input name="txtInviteCode" type="text" /></td>
+					</tr>
+					<tr>
+						<td>First Name:</td>
+						<td><input name="txtFirstName" type="text" /></td>
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td><input name="txtLastName" type="text" /></td>
+					</tr>
+					<tr>
+						<td>Company:</td>
+						<td><input name="txtCompany" type="text" /></td>
+					</tr>
+					<tr>
+						<td>E-mail</td>
+						<td><input name="txtEmail" type="text" /></td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input name="txtPass1" type="password" /></td>
+					</tr>
+					<tr>
+						<td>Re-Enter Password</td>
+						<td><input name="txtPass2" type="password" /></td>
+					</tr>
+				</table>
+				<input name="btnSubmit" type="submit" value="Register" />
+		</form>
+	</div>
+{% endblock %}

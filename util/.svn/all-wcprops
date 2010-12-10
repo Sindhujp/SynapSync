@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/social/!svn/ver/135/u001-social/util
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/social/!svn/ver/3/u001-social/util/__init__.py
+END
+demjson.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/social/!svn/ver/21/u001-social/util/demjson.py
+END
+twitter_oauth_handler.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/social/!svn/ver/135/u001-social/util/twitter_oauth_handler.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/social/!svn/ver/3/u001-social/util/README.txt
+END
+sessions.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/social/!svn/ver/3/u001-social/util/sessions.py
+END

@@ -1,0 +1,44 @@
+{% extends "_base.html" %}
+{% block title %}
+	SynapSync - {{company}}
+{% endblock %}
+
+{% block bodycontent %} 
+	<div id="content">
+		<p>
+			<h3>{{company}}'s latest announcements</h3>
+		</p>
+		<p>
+			{% if posts %}
+				{% for p in posts %}
+					<p>
+						{{p}}
+					</p>
+				{% endfor %}
+			{% else %}
+				<p>
+					No updates yet...
+				</p>
+			{% endif %}
+		</p>
+		
+	</div>
+		
+	<div class="rightcolumn">
+		<p>
+			<h3>Company Info</h3>
+		</p>
+		<p>
+			{{info}}
+		</p>
+		
+		<form method="post" accept-charset="utf-8">
+			<h3>Subscribe via email:</h3>
+			<p>
+				<input type="text" name="txtEmail"></input>
+				<input type="submit" value="Subscribe"/>
+			</p>
+		</form>
+	</div>
+	
+{% endblock %}

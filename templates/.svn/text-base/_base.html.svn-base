@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>
+   {% block title %}App Engine - HTML{% endblock %}
+</title>
+<link href="../static/stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="wrapper">
+         <div class="navigation">
+		 
+		       <ul>
+				<li><a href="../main.html" style="color:orange;">SynapSync</a></li>		
+			
+				{% if user %}		 				
+					<li><a href="../controlpanel.html">Home</a></li>
+					<li><a href="../settings.html">Settings</a></li>
+					<li><a href="../logout">Logout</a></li>
+				{% else %}
+					<li><a href="../register.html">Register</a> </li>
+				{% endif %}
+			</ul>		 
+			   
+		 </div>
+		 
+		 <div class="message">
+			{% if message %}
+				<p>
+					{{message}}
+				</p>
+			{% endif %}				
+		</div>
+	        
+		<div class="error">
+			{% if error %} 
+				<p>
+					<b>{{ error }}</b> 
+				</p> 
+			{% endif %}
+		</div>
+			
+		<div>
+			{% block bodycontent %}
+				Replace this
+			{% endblock %}  		 
+		</div>
+		 
+		 <div class="footer">
+		       
+			   <p>© SynapSync Inc. 2010</p>		
+			    
+	     </div>   
+	</div>
+   
+<script type="text/javascript">
+		var uservoiceJsHost = ("https:" == document.location.protocol) ? "https://uservoice.com" : "http://cdn.uservoice.com";
+		document.write(unescape("%3Cscript src='" + uservoiceJsHost + "/javascripts/widgets/tab.js' type='text/javascript'%3E%3C/script%3E"))
+	</script>
+	<script type="text/javascript">
+		UserVoice.Tab.show({ 
+		/* required */
+		key: 'synapsync',
+		host: 'synapsync.uservoice.com', 
+		forum: '33109', 
+		/* optional */
+		  alignment: 'left',
+		background_color:'gray', 
+		hover_color: '#06C',
+		lang: 'en'
+		})
+	</script>
+	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript"></script><script type="text/javascript">FB.init("bba630a5c803425bbb00cb137fe0894c");</script>
+</body>
+</html>

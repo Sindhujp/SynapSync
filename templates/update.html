@@ -1,0 +1,11 @@
+{% extends "_base.html" %}
+{% block title %}
+		SynapSync - Content Publishing Platform for Online Social Networks
+{% endblock %}
+{% block bodycontent %}
+	{% if update %}
+		{{update}}
+	{% else %}
+		Update you're looking for does not exist	
+	{% endif %}
+{% endblock %}

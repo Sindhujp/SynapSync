@@ -1,0 +1,127 @@
+{% extends "_base.html" %}
+{% block title %}
+		Settings
+{% endblock %}
+{% block bodycontent %}	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<body>
+	<script type="text/javascript" src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"></script>
+	<script type="text/javascript" src="../static/facebook.js"></script>
+{% if user  %}
+	<form method="post" accept-charset="utf-8">
+	<div id="content">
+		<h2>User Profile</h2>
+		<br>
+		<table>
+			<tr>
+				<td>Email Address: </td>
+				<td><label for="lblEmail">{{email}}</label></td>
+				<td><input name="txtEmail" value="{{email}}" type="hidden"/></td>
+			</tr>
+			<tr>
+				<td>First Name: </td>
+				<td><input name="txtFirstName" type="text" value="{{firstName}}" /></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input name="txtLastName" type="text" value="{{lastName}}" /></td>
+			</tr>
+			<tr>
+				<td><h3>Change Password</h3></td>
+			</tr>
+			<tr>
+				<td>Old Password </td>
+				<td><input name="txtOldPass" type="text" disabled="disabled" /></td>
+			</tr>
+			<tr>
+				<td>New Password </td>
+				<td><input name="txtNewPass" type="text" disabled="disabled" /></td>
+			</tr>
+		</table>
+	
+	{% if isAdmin %}
+		<div>
+			<h2>Company Profile</h2>
+			<br>
+			<table>
+			<tr>
+				<td>Company Name: </td>
+				<td><label for="lblCompanyName">{{cname}}</label></td>
+				<td><input name="txtCompanyName" type="hidden" value="{{cname}}"/></td>
+			</tr>
+			<tr>
+				<td>Street Address: </td>
+				<td><input name="txtStreetAddress" type="text" value="{{stAddress}}" /></td>
+			</tr>
+			<tr>
+				<td>City: </td>
+				<td><input name="txtCity" type="text" value="{{city}}" /></td>
+			</tr>
+			<tr>
+				<td>State/Province: </td>
+				<td><input name="txtState" type="text" value="{{state}}" /></td>
+			</tr>
+			<tr>
+				<td>Zip/Postal Code: </td>
+				<td><input name="txtZip" type="text" value="{{zip}}" /></td>
+			</tr>
+			<tr>
+				<td>Country: </td>
+				<td><input name="txtCountry" type="text" value="{{country}}" /></td>
+			</tr>
+			<tr>
+				<td>Phone Number: </td>
+				<td><input name="txtPhoneNumber" type="text" value="{{number}}" /></td>
+			</tr>
+			<tr>
+				<td>Contact Email: </td>
+				<td><input name="txtContactEmail" type="text" value="{{cemail}}" /></td>
+			</tr>
+			<tr>
+				<td>Company Website: </td>
+				<td><input name="txtWebsite" type="text" value="{{website}}" /></td>
+			</tr>
+		</table>
+		<br>
+		</div>
+		
+		<div>
+			<h2>Admin Tools</h2>
+			<br>
+			{% if socialAccounts %}
+				Twitter Accounts
+				{% for r in socialAccounts %}
+					<ul>
+						<li><a href="http://www.twitter.com/{{r}}">{{r}}</a></li>
+					</ul>
+				{% endfor %}
+			{% endif %}
+			<br>
+			<a href="/oauth/twitter/login"><img src="http://twitter-badges.s3.amazonaws.com/twitter-a.png"></a>
+			<br>
+			<br>
+			{% if facebookAccounts %}
+				Facebook Accounts
+				{% for f in facebookAccounts %}
+					<ul>
+						<li><a href="http://www.facebook.com/profile.php?ref=profile&id={{f.dbUid}}">{{f.dbUserName}}</a></li>
+					</ul>
+				{% endfor %}
+			{% endif %}
+			<br>
+			<div id="user">
+			<a href="/facebook/"><img src="http://t0.gstatic.com/images?q=tbn:Sr8QMA19OwJt8M:http://singers.utah.edu/images/Logos/Facebook_logo_up.png"></a>
+			</div>
+			<br>
+		</div>
+		<input name="btnSave" type="submit" value="Save" />
+		</form>
+		
+		{% endif %}
+{% endif %}
+</div>
+
+</body>
+</html>
+{% endblock %}

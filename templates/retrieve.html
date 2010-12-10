@@ -1,0 +1,26 @@
+﻿{% extends "_base.html" %}
+	{% block title %}
+		SynapSync - Retrieve Password
+	{% endblock %}
+	{% block bodycontent %} 
+	<table>
+		<tr>
+			<td>
+				{% if confirmation %}
+					<p> {{confirmation}} </p>
+				{% endif %}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2>Please enter email address to retrieve password for:</h2><br>
+				<form method="post" accept-charset="utf-8">
+					Email: <td><input type="text" name="txtEmail" /><br>
+					<input type="submit" value="Retrieve"/> 
+				</form>
+			</td>
+		</tr>
+		
+	
+	</table>
+{% endblock %}

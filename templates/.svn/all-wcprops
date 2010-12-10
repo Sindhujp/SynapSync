@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/social/!svn/ver/147/u001-social/templates
+END
+twittercallback.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/social/!svn/ver/39/u001-social/templates/twittercallback.html
+END
+controlpanel.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/social/!svn/ver/147/u001-social/templates/controlpanel.html
+END
+settings.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/social/!svn/ver/129/u001-social/templates/settings.html
+END
+update.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/social/!svn/ver/70/u001-social/templates/update.html
+END
+profiles.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/social/!svn/ver/107/u001-social/templates/profiles.html
+END
+xd_receiver.htm
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/social/!svn/ver/77/u001-social/templates/xd_receiver.htm
+END
+main.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/social/!svn/ver/81/u001-social/templates/main.html
+END
+register.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/social/!svn/ver/83/u001-social/templates/register.html
+END
+retrieve.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/social/!svn/ver/22/u001-social/templates/retrieve.html
+END
+facebookcallback.html
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/social/!svn/ver/139/u001-social/templates/facebookcallback.html
+END
+_base.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/social/!svn/ver/137/u001-social/templates/_base.html
+END
+contact.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/social/!svn/ver/107/u001-social/templates/contact.html
+END
+reply.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/social/!svn/ver/146/u001-social/templates/reply.html
+END
